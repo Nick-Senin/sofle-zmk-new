@@ -105,7 +105,7 @@
             label = "adjust";
             bindings = <
 &bt BT_CLR         &bt BT_SEL 0     &bt BT_SEL 1     &bt BT_SEL 2      &bt BT_SEL 3   &bt BT_SEL 4                             &none  &kp K_PREV     &kp C_PP       &kp K_NEXT     &none  &none
-&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &kp LG(UP_ARROW)  &none          &none                                    &none  &kp LS(LG(U))  &kp LS(LC(I))  &kp LS(LC(O))  &none  &none
+&ext_power EP_TOG  &rgb_ug RGB_HUD  &rgb_ug RGB_HUI  &kp LG(UP_ARROW)  &none          &none                                    &none  &kp LS(LG(U))  &kp LS(LG(I))  &kp LS(LC(O))  &none  &none
 &none              &rgb_ug RGB_BRD  &kp LG(LEFT)     &kp LG(DOWN)      &kp LG(RIGHT)  &none                                    &none  &kp LS(LC(J))  &kp LS(LG(K))  &kp RS(RG(L))  &none  &none
 &none              &none            &none            &kp LG(D)         &none          &none         &rgb_ug RGB_TOG    &none   &none  &kp C_VOL_DN   &none          &kp C_VOL_UP   &none  &none
                                     &none            &none             &none          &none         &kp LG(ENTER)      &trans  &none  &none          &none          &none
