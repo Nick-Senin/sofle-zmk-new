@@ -25,6 +25,11 @@
             if-layers = <1 2>;
             then-layer = <3>;
         };
+
+        mac_adjust {
+            if-layers = <4 5>;
+            then-layer = <3>;
+        };
     };
 
     macros {
@@ -46,6 +51,41 @@
             #binding-cells = <2>;
             tapping-term-ms = <100>;
             flavor = "tap-preferred";
+        };
+
+        center_win_management: center_win_management {
+            compatible = "zmk,behavior-tap-dance";
+            label = "CENTER_WIN_MANAGEMENT";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LC(LG(NUMBER_3)))>, <&kp LA(LC(NUMBER_3))>;
+        };
+
+        left_win_management: left_win_management {
+            compatible = "zmk,behavior-tap-dance";
+            label = "LEFT_WIN_MANAGEMENT";
+            #binding-cells = <0>;
+            bindings = <&kp LC(LA(LG(NUMBER_2)))>, <&kp LA(LC(NUMBER_2))>;
+        };
+
+        right_win_behavoir: right_win_behavoir {
+            compatible = "zmk,behavior-tap-dance";
+            label = "RIGHT_WIN_BEHAVOIR";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LC(LG(NUMBER_4)))>, <&kp LA(LC(NUMBER_4))>;
+        };
+
+        far_left_win_management: far_left_win_management {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FAR_LEFT_WIN_MANAGEMENT";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LC(LG(NUMBER_1)))>, <&kp LA(LC(NUMBER_1))>;
+        };
+
+        far_right_win_management: far_right_win_management {
+            compatible = "zmk,behavior-tap-dance";
+            label = "FAR_RIGHT_WIN_MANAGEMENT";
+            #binding-cells = <0>;
+            bindings = <&kp LA(LC(LG(NUMBER_5)))>, <&kp LA(LC(NUMBER_5))>;
         };
     };
 
@@ -139,7 +179,7 @@
             bindings = <
 &kp ESCAPE         &kp N1  &kp N2    &kp N3            &kp N4        &kp N5                            &kp N6  &kp N7             &kp N8     &kp N9    &kp N0    &kp MINUS
 &kp TAB            &kp Q   &kp W     &kp E             &kp R         &kp T                             &kp Y   &kp U              &kp I      &kp O     &kp P     &kp LEFT_BRACKET
-&kp LG(BACKSPACE)  &kp A   &kp S     &kp D             &kp F         &kp G                             &kp H   &kp J              &kp K      &kp L     &kp SEMI  &to 0
+&kp LA(BACKSPACE)  &kp A   &kp S     &kp D             &kp F         &kp G                             &kp H   &kp J              &kp K      &kp L     &kp SEMI  &to 0
 &kp LSHFT          &kp Z   &kp X     &kp C             &kp V         &kp B   &kp C_MUTE    &none       &kp N   &kp M              &kp COMMA  &kp DOT   &kp FSLH  &kp RSHFT
                            &kp LGUI  &kp LEFT_CONTROL  &kp LEFT_ALT  &mo 5   &kp SPACE     &kp RETURN  &mo 2   &kp LC(LA(SPACE))  &mo 3      &kp RGUI
             >;
@@ -152,11 +192,11 @@
         mac_lower {
             label = "mac_lower";
             bindings = <
-&kp LG(Q)      &none      &none            &none         &none        &none                                            &none               &none             &none          &none              &none   &none
-&kp LG(TAB)    &kp LG(W)  &kp LS(LC(TAB))  &kp UP_ARROW  &kp LC(TAB)  &kp LC(F5)                                       &trans              &kp LA(LG(LEFT))  &trans         &kp LA(LG(RIGHT))  &trans  &trans
-&kp BACKSPACE  &kp EXCL   &kp LEFT_ARROW   &kp DOWN      &kp RIGHT    &kp LG(PSCRN)                                    &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(DOWN)   &kp LG(RIGHT)      &trans  &kp LS(LG(DELETE))
-&trans         &kp LG(A)  &kp LG(X)        &kp LG(C)     &kp LG(V)    &kp DELETE     &trans         &trans             &kp LS(LG(H))       &kp LS(LG(M))     &kp LS(LG(F))  &trans             &trans  &trans
-                          &trans           &mo 3         &lt 3 TAB    &trans         &key_repeat    &kp LA(LC(ENTER))  &kp LC(O)           &trans            &trans         &trans
+&kp LG(Q)      &far_left_win_management  &left_win_management  &center_win_management  &right_win_behavoir  &far_right_win_management                                    &none               &none             &none          &none              &none   &none
+&kp LG(TAB)    &kp LG(W)                 &kp LS(LC(TAB))       &kp UP_ARROW            &kp LC(TAB)          &kp LC(LG(CAPSLOCK))                                         &trans              &kp LA(LG(LEFT))  &trans         &kp LA(LG(RIGHT))  &trans  &trans
+&kp BACKSPACE  &kp EXCL                  &kp LEFT_ARROW        &kp DOWN                &kp RIGHT            &kp LG(CAPSLOCK)                                             &kp LG(LEFT_ARROW)  &kp LG(UP_ARROW)  &kp LG(DOWN)   &kp LG(RIGHT)      &trans  &kp LS(LG(DELETE))
+&trans         &kp LG(A)                 &kp LG(X)             &kp LG(C)               &kp LG(V)            &kp DELETE                 &trans         &trans             &kp LS(LG(H))       &kp LS(LG(M))     &kp LS(LG(F))  &trans             &trans  &trans
+                                         &trans                &mo 3                   &lt 3 TAB            &trans                     &key_repeat    &kp LA(LC(ENTER))  &kp LC(O)           &trans            &trans         &trans
             >;
 
             sensor-bindings =
