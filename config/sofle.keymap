@@ -25,21 +25,6 @@
             if-layers = <1 4>;
             then-layer = <5>;
         };
-
-        mac_adjust {
-            if-layers = <2 3>;
-            then-layer = <5>;
-        };
-    };
-
-    macros {
-        lang_switch: lang_switch {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp LA(LEFT_SHIFT)>, <&macro_pause_for_release>;
-
-            label = "LANG_SWITCH";
-        };
     };
 
     behaviors {
