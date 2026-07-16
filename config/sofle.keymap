@@ -107,7 +107,7 @@
 
             sensor-bindings =
                 <&inc_dec_kp C_VOL_UP C_VOL_DN>,
-                <&inc_dec_kp LA(LS(LC(PG_UP))) LS(LC(PG_DN))>;
+                <&inc_dec_kp LA(LC(LEFT_BRACKET)) LA(LC(RIGHT_BRACKET))>;
         };
 
         lower_layer {
